@@ -1,0 +1,78 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="edu.bu.projectportal.ProjectDetailFragment">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/projTitleTextViewId"
+        android:text="Project Title"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:id="@+id/projSummaryTextViewId"
+        android:text="This is the detail of the project" />
+
+    <TextView
+        android:id="@+id/projAuthorTextViewId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/proj_author" />
+
+    <CheckBox
+        android:id="@+id/projFavoriteCheckBoxId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:checked="false"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="@string/proj_favorite" />
+
+    <TextView
+        android:id="@+id/projLinkTextViewId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/proj_link" />
+
+    <TextView
+        android:id="@+id/projKeywordTextViewId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/proj_keyword" />
+
+    <EditText
+        android:id="@+id/projAdditionInfoEditTextId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        android:text=" " />
+
+    <Button
+        android:id="@+id/editbutton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="EDIT"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+
+
+
+
+</LinearLayout>
+
+

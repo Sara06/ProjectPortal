@@ -1,0 +1,47 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="edu.bu.projectportal.ProjectsListFragment">
+
+
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/projectlist_recyclerview"
+        android:scrollbars="vertical"/>
+
+    <CheckBox android:id="@+id/favorite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/favorite"
+        android:onClick="onFavoriteClicked"
+        android:padding="8dp"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/favorites"
+        android:padding="8dp"/>
+
+    <ListView
+        android:id="@+id/favoriteList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        />
+
+
+
+
+    <!--   <ListView
+        android:id="@+id/projectsList_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:entries="@array/Projects_list"/>-->
+</FrameLayout>

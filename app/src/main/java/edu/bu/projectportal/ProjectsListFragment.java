@@ -11,6 +11,10 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import java.util.List;
+
+import edu.bu.projectportal.database.Project;
+import edu.bu.projectportal.database.ProjectDao;
+
 /**
  * A simple {@link Fragment} subclass.
  */
@@ -28,9 +32,25 @@ public class ProjectsListFragment extends Fragment {
         RecyclerView projectsListRecyclerView = (RecyclerView)
                 (v.findViewById(R.id.projectlist_recyclerview));
 
-        ProjectListAdapter projectListAdapter = new ProjectListAdapter(Project.projects);
+
+        ProjectDao projectDao = ProjectDao.getInstance(getContext());
+        projectDao.openDb();
+        List<Project> projects;
+        projects = projectDao.getAllProject();
+
+
+
+
+
+
+
+        ProjectListAdapter projectListAdapter = new ProjectListAdapter(projects);
         projectsListRecyclerView.setAdapter(projectListAdapter);
-        projectListAdapter.setListener((ProjectListAdapter.Listener)getActivity());
+        projectListAdapter.setListener((position) ->{
+            ProjectListAdapter.Listener listener = (ProjectListAdapter.Listener) getActivity();
+            if(listener!=null)
+                listener.onClick(position);
+        });
 
         LinearLayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
         projectsListRecyclerView.setLayoutManager(mLayoutManager);

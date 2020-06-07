@@ -11,15 +11,17 @@ import android.widget.TextView;
 
 import java.util.List;
 
+import edu.bu.projectportal.database.Project;
+
 public class ProjectListAdapter extends RecyclerView.Adapter<ProjectListAdapter.ProjectListViewHolder>{
-    private Project[] projects;
+    private List<Project> projects;
     private Listener listener;
 
     interface Listener {
         abstract void onClick(int position);
     }
 
-    public ProjectListAdapter(Project[] projects){this.projects = projects;}
+    public ProjectListAdapter(List<Project> projects){this.projects = projects;}
 
     @Override
     public ProjectListViewHolder onCreateViewHolder(ViewGroup parent, int viewType){
@@ -40,7 +42,7 @@ public class ProjectListAdapter extends RecyclerView.Adapter<ProjectListAdapter.
 //                view.getContext().startActivity(intent);
                 listener = (Listener)view.getContext();
                 if (listener != null)
-                    listener.onClick(position);
+                    listener.onClick(projects.get(position).getID());
             }
         });
 
@@ -54,7 +56,7 @@ public class ProjectListAdapter extends RecyclerView.Adapter<ProjectListAdapter.
 
     @Override
     public int getItemCount() {
-        return projects.length;
+        return projects.size();
     }
 
     //ViewHolder inner class
